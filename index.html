@@ -24,10 +24,17 @@
 	<header class="main-header">
 		<div class="container">
 			<a href="/" class="main-header__logo logo">
-    <i class="fas fa-mobile-alt logo__icon"></i>
-    <p class="logo__text"><span>Айфонсервис</span> | Техника Apple</p>
+    <i class="fab fa-apple"></i>
+    <p class="logo__text"><span>Apple store</span> | Техника Apple</p>
 </a>	
 			<a href="tel:+380969988776" class="main-header__phone">+38 (096) 99 88 776</a>
+			<button class="main-header__cart">
+				<span>
+					<i class="fas fa-shopping-cart"></i>
+					<span>Корзина</span>
+					<span class="main-header__cart-count">0</span>
+				</span>
+			</button>
 		</div>
 	</header>
 
@@ -35,21 +42,21 @@
 		<div class="container">
 			<aside class="aside-wrapper">
 				<nav class="cat-nav" id="catigories-wrapper">
-					<ul class="cat-nav__list">
+					<ul class="cat-nav__list" data-spoller data-one-spoller>
 						<li class="cat-nav__item">
 
-							<span class="cat-nav__title" data-cat="title">iPhone</span>
+							<span class="cat-nav__title" data-spoller-title tabindex="-1">iPhone</span>
 
-							<ul class="cat-nav__sub-list" data-cat="subTitle">
+							<ul class="cat-nav__sub-list">
 								<li class="cat-nav__sub-item">iPhone 12</li>
 								<li class="cat-nav__sub-item">iPhone 11</li>
 								<li class="cat-nav__sub-item">iPhone X</li>
 							</ul>
 
 						</li>
-						<li class="cat-nav__item">
+						<li class="cat-nav__item"  data-spoler-wrapper>
 							
-							<span class="cat-nav__title" data-cat="title">iPad</span>
+							<span class="cat-nav__title" data-spoller-title tabindex="-1">iPad</span>
 
 							<ul class="cat-nav__sub-list">
 								<li class="cat-nav__sub-item">iPad Pro 12</li>
@@ -59,9 +66,9 @@
 
 						</li>
 
-						<li class="cat-nav__item">
+						<li class="cat-nav__item" data-spoler-wrapper>
 							
-							<span class="cat-nav__title" data-cat="title">Mac</span>
+							<span class="cat-nav__title" data-spoller-title tabindex="-1">Mac</span>
 
 							<ul class="cat-nav__sub-list">
 								<li class="cat-nav__sub-item">MacBook Pro</li>
@@ -73,7 +80,7 @@
 
 						<li class="cat-nav__item">
 							
-							<span class="cat-nav__title" data-cat="title">Accessories</span>
+							<span class="cat-nav__title">Accessories</span>
 
 						</li>
 					</ul>
@@ -112,8 +119,8 @@
 	<footer class="main-footer">
 		<div class="container">
 			<a href="/" class="main-header__logo logo">
-    <i class="fas fa-mobile-alt logo__icon"></i>
-    <p class="logo__text"><span>Айфонсервис</span> | Техника Apple</p>
+    <i class="fab fa-apple"></i>
+    <p class="logo__text"><span>Apple store</span> | Техника Apple</p>
 </a>
 			<ul class="main-footer__social">
 				<li class="main-footer__item">

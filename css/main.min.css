@@ -477,6 +477,7 @@ footer {
 .main-header__phone {
   color: #fff;
   opacity: .7;
+  margin-left: auto;
   -webkit-transition: opacity .25s ease;
   -o-transition: opacity .25s ease;
   transition: opacity .25s ease
@@ -485,6 +486,61 @@ footer {
   color: #fff;
   text-decoration: none;
   opacity: 1
+}
+.main-header__cart {
+  display: block;
+  position: relative;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: 0;
+  border-left: 1px solid #f7f7f7;
+  padding: 0 10px;
+  margin-left: 10px
+}
+.main-header__cart > span {
+  width: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1
+}
+.main-header__cart::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #4d4d4d;
+  -webkit-transition: width .25s ease;
+  -o-transition: width .25s ease;
+  transition: width .25s ease;
+  z-index: 0
+}
+.main-header__cart:hover::before {
+  width: 100%
+}
+.main-header__cart i {
+  color: #fff
+}
+.main-header__cart-count {
+  display: inline-block;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #000
 }
 main .container {
   display: -ms-grid;
@@ -518,9 +574,6 @@ main .container {
 .cat-nav__title:focus,
 .cat-nav__title:hover {
   background-color: #4ca1ff
-}
-.cat-nav__sub-list {
-  display: none
 }
 .cat-nav__sub-item {
   height: 50px;
