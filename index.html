@@ -28,7 +28,7 @@
     <p class="logo__text"><span>Apple store</span> | Техника Apple</p>
 </a>	
 			<a href="tel:+380969988776" class="main-header__phone">+38 (096) 99 88 776</a>
-			<button class="main-header__cart">
+			<button class="main-header__cart" data-cart-btn>
 				<span>
 					<i class="fas fa-shopping-cart"></i>
 					<span>Корзина</span>(
@@ -110,61 +110,8 @@
 				</ul>
 
 			</aside>
-			<div class="store-wrapper">
-				<div class="item" >
-    <div class="item__wrapper"data-item>
-        <img src="/images/dist/iPhone 12/apple_iphone_12_pro_max_128gb_pacific_blue.jpg" alt="apple_iphone_12_pro_max" class="item__img">
-        <h3 class="item__title">iPhone 12 pro max 128Gb Pacific blue</h3>
-        <p class="item__price">40000 uah</p>
-    </div>
-    <button class="item__catrBtn">Добавить в корзину</button>
-    <button class="item__byBtn">Купить в один клик</button>
-</div>
-				<div class="item" >
-    <div class="item__wrapper"data-item>
-        <img src="/images/dist/iPhone 12/apple_iphone_12_pro_max_128gb_pacific_blue.jpg" alt="apple_iphone_12_pro_max" class="item__img">
-        <h3 class="item__title">iPhone 12 pro max 128Gb Pacific blue</h3>
-        <p class="item__price">40000 uah</p>
-    </div>
-    <button class="item__catrBtn">Добавить в корзину</button>
-    <button class="item__byBtn">Купить в один клик</button>
-</div>
-				<div class="item" >
-    <div class="item__wrapper"data-item>
-        <img src="/images/dist/iPhone 12/apple_iphone_12_pro_max_128gb_pacific_blue.jpg" alt="apple_iphone_12_pro_max" class="item__img">
-        <h3 class="item__title">iPhone 12 pro max 128Gb Pacific blue</h3>
-        <p class="item__price">40000 uah</p>
-    </div>
-    <button class="item__catrBtn">Добавить в корзину</button>
-    <button class="item__byBtn">Купить в один клик</button>
-</div>
-				<div class="item" >
-    <div class="item__wrapper"data-item>
-        <img src="/images/dist/iPhone 12/apple_iphone_12_pro_max_128gb_pacific_blue.jpg" alt="apple_iphone_12_pro_max" class="item__img">
-        <h3 class="item__title">iPhone 12 pro max 128Gb Pacific blue</h3>
-        <p class="item__price">40000 uah</p>
-    </div>
-    <button class="item__catrBtn">Добавить в корзину</button>
-    <button class="item__byBtn">Купить в один клик</button>
-</div>
-				<div class="item" >
-    <div class="item__wrapper"data-item>
-        <img src="/images/dist/iPhone 12/apple_iphone_12_pro_max_128gb_pacific_blue.jpg" alt="apple_iphone_12_pro_max" class="item__img">
-        <h3 class="item__title">iPhone 12 pro max 128Gb Pacific blue</h3>
-        <p class="item__price">40000 uah</p>
-    </div>
-    <button class="item__catrBtn">Добавить в корзину</button>
-    <button class="item__byBtn">Купить в один клик</button>
-</div>
-				<div class="item" >
-    <div class="item__wrapper"data-item>
-        <img src="/images/dist/iPhone 12/apple_iphone_12_pro_max_128gb_pacific_blue.jpg" alt="apple_iphone_12_pro_max" class="item__img">
-        <h3 class="item__title">iPhone 12 pro max 128Gb Pacific blue</h3>
-        <p class="item__price">40000 uah</p>
-    </div>
-    <button class="item__catrBtn">Добавить в корзину</button>
-    <button class="item__byBtn">Купить в один клик</button>
-</div>
+			<div class="store-wrapper" data-items-container>
+
 			</div>
 		</div>
 	</main>
@@ -199,10 +146,9 @@
 				<p class="main-footer__text">Сверстали: <br/> <a href="https://github.com/iKooot" target="_blank">iKot</a> & <a href="https://github.com/illiakko" target="_blank">illiakko</a></p>
 			</div>
 		</div>
-	</footer>saz
-ok877w
+	</footer>
 	<div class="modal-wrapper">
-    <section class="modal item-modal" data-modal>
+    <section class="modal item-modal" data-modal="item">
         <div class="item-modal__wrapper">
             <div class="item-modal__content">
                 <div class="item-modal__left-col">
@@ -240,6 +186,43 @@ ok877w
                 </div>
             </div>
         </div>
+    </section>
+    <section class="cart modal" data-modal="cart">
+      <div class="cart__wrapper">
+        <div class="cart__content">
+          <h2 class="cart__title">Ваш заказ</h2>
+          <div class="cart__item-wrapper">
+            <img src="/images/dist/iPhone 12/apple_iphone_12_pro_max_128gb_pacific_blue.jpg" alt="" class="cart__item-img" width="100">
+            <p class="cart__item-title">iPhone 12 pro max</p>
+            <div class="cart__counter-wrapper">
+              <button class="cart__btn"data-cart-counter-btn="add">+</button>
+              <span class="cart__counter">1</span> 
+              <button class="cart__btn"data-cart-counter-btn="subtract">-</button>
+            </div>
+          </div>
+          <span class="cart__total-price">Сумма заказа: <span>35000</span> uah</span>
+          <form class="form">
+  <div class="form__label-wrapper">
+    <label for="user-name">Введите ваше имя</label>
+    <input type="text" name="name" placeholder="Jon" id="user-name" required>
+  </div>
+  <div class="form__label-wrapper">
+    <label for="user-last-name">Введите вашу фамилию</label>
+    <input type="text" name="last-name" placeholder="Matrix" id="user-last-name" required>
+  </div>
+  <div class="form__label-wrapper">
+    <label for="user-phone">Введите ваш контактный телефон</label>
+    <input type="text" name="phone" placeholder="+380" id="user-phone" required>
+  </div>
+  <div class="form__label-wrapper">
+    <label for="user-email">Введите ваш контактный телефон</label>
+    <input type="text" name="email" placeholder="example@gmail.com" id="user-email" required>
+  </div>
+  <button type="submit" class="form__btn btn">Оформить заказ</button>
+</form>
+          <i class="fas fa-times" data-close-modal></i>
+        </div>
+      </div>
     </section>
 </div>
 	
