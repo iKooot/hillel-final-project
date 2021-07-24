@@ -590,11 +590,14 @@ main .container {
 .cat-nav__title {
   width: 100%;
   height: 50px;
-  display: inline-block;
   line-height: 50px;
   background-color: #7fbcff;
   color: #fff;
   padding: 0 20px;
+  outline: 0;
+  border: none;
+  -moz-text-align-last: left;
+  text-align-last: left;
   cursor: pointer;
   border-bottom: 1px solid #b2d7ff;
   -webkit-transition: background-color .25s ease;
@@ -604,6 +607,11 @@ main .container {
 .cat-nav__title:focus,
 .cat-nav__title:hover {
   background-color: #4ca1ff
+}
+.cat-nav__title:disabled {
+  background-color: #e6e6e6;
+  color: #333;
+  cursor: default
 }
 .cat-nav__sub-item {
   height: 50px;
@@ -628,9 +636,9 @@ main .container {
   padding: 20px;
   padding-left: 40px;
   margin-top: 30px;
-  -webkit-transition: background-color .25s ease;
-  -o-transition: background-color .25s ease;
-  transition: background-color .25s ease
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease
 }
 .benefits__item:first-child {
   margin-top: 0
@@ -642,16 +650,7 @@ main .container {
   color: #921ad3
 }
 .benefits__item:nth-child(1):hover {
-  background-color: #921ad3
-}
-.benefits__item:nth-child(1):hover .benefits__icon {
-  color: #fff
-}
-.benefits__item:nth-child(1):hover .benefits__title {
-  color: #fff
-}
-.benefits__item:nth-child(1):hover .benefits__text {
-  color: #fff
+  border-color: #921ad3
 }
 .benefits__item:nth-child(2) .benefits__icon {
   color: #ff3d00
@@ -660,16 +659,7 @@ main .container {
   color: #ff3d00
 }
 .benefits__item:nth-child(2):hover {
-  background-color: #ff3d00
-}
-.benefits__item:nth-child(2):hover .benefits__icon {
-  color: #fff
-}
-.benefits__item:nth-child(2):hover .benefits__title {
-  color: #fff
-}
-.benefits__item:nth-child(2):hover .benefits__text {
-  color: #fff
+  border-color: #ff3d00
 }
 .benefits__item:nth-child(3) .benefits__icon {
   color: #ff9320
@@ -678,16 +668,7 @@ main .container {
   color: #ff9320
 }
 .benefits__item:nth-child(3):hover {
-  background-color: #ff9320
-}
-.benefits__item:nth-child(3):hover .benefits__icon {
-  color: #fff
-}
-.benefits__item:nth-child(3):hover .benefits__title {
-  color: #fff
-}
-.benefits__item:nth-child(3):hover .benefits__text {
-  color: #fff
+  border-color: #ff9320
 }
 .benefits__item:nth-child(4) .benefits__icon {
   color: #0079ff
@@ -696,16 +677,7 @@ main .container {
   color: #0079ff
 }
 .benefits__item:nth-child(4):hover {
-  background-color: #0079ff
-}
-.benefits__item:nth-child(4):hover .benefits__icon {
-  color: #fff
-}
-.benefits__item:nth-child(4):hover .benefits__title {
-  color: #fff
-}
-.benefits__item:nth-child(4):hover .benefits__text {
-  color: #fff
+  border-color: #0079ff
 }
 .benefits__icon {
   position: absolute;
@@ -743,6 +715,7 @@ main .container {
   gap: 30px
 }
 .item {
+  position: relative;
   height: auto;
   border: 1px solid transparent;
   -webkit-transition: border .25s ease;
@@ -767,6 +740,19 @@ main .container {
   text-align: center;
   padding: 40px 37px 25px 37px
 }
+.item__hot {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: red;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  z-index: 1
+}
 .item__img {
   width: 190px;
   height: auto
@@ -777,8 +763,22 @@ main .container {
   line-height: 24px;
   margin-top: 35px
 }
-.item__price {
+.item__price-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
   margin-top: 20px
+}
+.item__price {
+  font-weight: 700
+}
+.item__old-price {
+  text-decoration: line-through;
+  font-size: 14px
 }
 .item button {
   width: 100%;
