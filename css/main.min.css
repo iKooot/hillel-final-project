@@ -580,11 +580,36 @@ main .container {
   grid-row-gap: 0;
   padding: 30px 12px
 }
-.hero-img {
+.carusel {
+  position: relative;
+  margin-bottom: 65px;
+  overflow: hidden
+}
+.carusel__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%
+}
+.carusel__slide img {
   width: 100%;
   height: auto;
-  display: block;
-  margin-bottom: 65px
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.carusel__btn {
+  position: absolute;
+  top: calc(50% - 20)
+}
+.carusel__btn.prev {
+  left: 0
+}
+.carusel__btn.next {
+  right: 0
+}
+.carusel__btn i {
+  color: #4ca1ff;
+  font-size: 36px
 }
 .title {
   text-align: center;
@@ -878,7 +903,8 @@ main .container {
   gap: 30px;
   max-width: 800px;
   -webkit-animation: fadeIn .5s ease;
-  animation: fadeIn .5s ease
+  animation: fadeIn .5s ease;
+  z-index: 10
 }
 .item-modal__left-col {
   display: -webkit-box;
@@ -979,7 +1005,8 @@ main .container {
   background-color: #fff;
   padding: 20px;
   -webkit-animation: fadeIn .5s ease;
-  animation: fadeIn .5s ease
+  animation: fadeIn .5s ease;
+  z-index: 10
 }
 .cart__content i {
   position: absolute;

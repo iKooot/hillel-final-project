@@ -65,7 +65,17 @@
 
 			</aside>
 			<div class="content-wrapper">
-				<img class="hero-img" src="images/dist/Apple-devices.jpg" alt="Apple store">
+				<div class="carusel">
+					<div class="carusel__slide" data-carusel>
+					  <img src="images/dist/Apple-devices3.jpg" alt="Apple store" data-carusel-slide="lastClone">
+					  <img src="images/dist/Apple-devices.jpg" alt="Apple store">
+					  <img src="images/dist/Apple-devices2.jpg" alt="Apple store">
+					  <img src="images/dist/Apple-devices3.jpg" alt="Apple store">
+					  <img src="images/dist/Apple-devices.jpg" alt="Apple store" data-carusel-slide="firstClone">
+					</div>
+					<button class="carusel__btn prev" tupe="button" data-carusel-button="Prev"><i class="fas fa-chevron-left"></i></button>
+					<button class="carusel__btn next" tupe="button" data-carusel-button="Next"><i class="fas fa-chevron-right"></i></button>
+				</div>
 				<h1 class="title">Стань частью Apple</h1>
 				<div class="store-wrapper" data-items-container></div>
 			</div>
