@@ -67,11 +67,11 @@
 			<div class="content-wrapper">
 				<div class="carusel">
 					<div class="carusel__slide" data-carusel>
-					  <img src="images/dist/Apple-devices3.jpg" alt="Apple store" data-carusel-slide="lastClone">
-					  <img src="images/dist/Apple-devices.jpg" alt="Apple store">
-					  <img src="images/dist/Apple-devices2.jpg" alt="Apple store">
-					  <img src="images/dist/Apple-devices3.jpg" alt="Apple store">
-					  <img src="images/dist/Apple-devices.jpg" alt="Apple store" data-carusel-slide="firstClone">
+					  <img src="images/dist/third-slider.jpg" alt="Apple store" data-carusel-slide="lastClone">
+					  <img src="images/dist/first-slider.jpg" alt="Apple store">
+					  <img src="images/dist/second-slider.jpg" alt="Apple store">
+					  <img src="images/dist/third-slider.jpg" alt="Apple store">
+					  <img src="images/dist/first-slider.jpg" alt="Apple store" data-carusel-slide="firstClone">
 					</div>
 					<button class="carusel__btn prev" tupe="button" data-carusel-button="Prev"><i class="fas fa-chevron-left"></i></button>
 					<button class="carusel__btn next" tupe="button" data-carusel-button="Next"><i class="fas fa-chevron-right"></i></button>
@@ -109,7 +109,7 @@
 		<div class="main-footer__copyright-wrapper">
 			<div class="container">
 				<a href="tel:+380969988776" class="main-footer__phone">+38 (096) 99 88 776</a>
-				<p class="main-footer__text">Design by: <br/> <a href="https://github.com/iKooot" target="_blank">iKot</a> & <a href="https://github.com/illiakko" target="_blank">illiakko</a></p>
+				<p class="main-footer__text">Created: <br/> <a href="https://github.com/iKooot" target="_blank">iKot</a> & <a href="https://github.com/illiakko" target="_blank">illiakko</a></p>
 			</div>
 		</div>
 	</footer>
@@ -121,34 +121,30 @@
       <div class="cart__wrapper">
         <div class="cart__content">
           <h2 class="cart__title">Ваш заказ</h2>
-          <div class="cart__item-wrapper">
-            <img src="/images/dist/iPhone 12/apple_iphone_12_pro_max_128gb_pacific_blue.jpg" alt="" class="cart__item-img" width="100">
-            <p class="cart__item-title">iPhone 12 pro max</p>
-            <div class="cart__counter-wrapper">
-              <button class="cart__btn"data-cart-counter-btn="subtract">-</button>
-              <span class="cart__counter">1</span> 
-              <button class="cart__btn"data-cart-counter-btn="add">+</button>
-            </div>
+          <div class="cart__item-wrapper" cart-item-wrapper>
           </div>
-          <span class="cart__total-price">Сумма заказа: <span>35000</span> uah</span>
+          <span class="cart__total-price">Сумма заказа: <span>0</span> uah</span>
           <form class="form">
   <div class="form__label-wrapper">
     <label for="user-name">Введите ваше имя</label>
     <input type="text" name="name" placeholder="Jon" id="user-name" required>
   </div>
   <div class="form__label-wrapper">
-    <label for="user-last-name">Введите вашу фамилию</label>
-    <input type="text" name="last-name" placeholder="Matrix" id="user-last-name" required>
+      <label for="user-last-name">Введите вашу фамилию</label>
+      <input type="text" name="last-name" placeholder="Matrix" id="user-last-name" required>
   </div>
   <div class="form__label-wrapper">
-    <label for="user-phone">Введите ваш контактный телефон</label>
-    <input type="text" name="phone" placeholder="+380" id="user-phone" required>
+      <label for="user-phone">Введите ваш контактный телефон</label>
+      <input type="text" name="phone" placeholder="+380" id="user-phone" required>
   </div>
   <div class="form__label-wrapper">
-    <label for="user-email">Введите ваш контактный телефон</label>
-    <input type="text" name="email" placeholder="example@gmail.com" id="user-email" required>
+      <label for="user-email">Введите ваш контактный email</label>
+      <input type="text" name="email" placeholder="example@gmail.com" id="user-email" required>
   </div>
-  <button type="submit" class="form__btn btn">Оформить заказ</button>
+  <button type="button" id="button-checkout-one-click" class="form__btn btn">Оформить
+      заказ</button>
+
+  <div id="msg-on-cart-form"></div>
 </form>
           <i class="fas fa-times" data-close="cart"></i>
         </div>
@@ -157,6 +153,5 @@
 </div>
 	
 	<script src="js/app.min.js"></script>
-
 </body>
 </html>

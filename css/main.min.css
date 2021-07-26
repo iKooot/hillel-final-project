@@ -506,6 +506,9 @@ footer {
 .form label {
   font-weight: 500
 }
+#msg-on-cart-form {
+  margin-top: 20px
+}
 .main-header {
   background-color: #333;
   color: #fff
@@ -589,13 +592,14 @@ main .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%
+  width: 100%;
+  height: 250px
 }
 .carusel__slide img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-  object-fit: cover
+  -o-object-fit: contain;
+  object-fit: contain
 }
 .carusel__btn {
   position: absolute;
@@ -756,6 +760,13 @@ main .container {
 .item {
   position: relative;
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   border: 1px solid transparent;
   -webkit-transition: border .25s ease;
   -o-transition: border .25s ease;
@@ -777,7 +788,8 @@ main .container {
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  padding: 40px 37px 25px 37px
+  padding: 40px 37px 25px 37px;
+  margin-bottom: auto
 }
 .item__hot {
   position: absolute;
@@ -793,8 +805,10 @@ main .container {
   z-index: 1
 }
 .item__img {
-  width: 190px;
-  height: auto
+  width: auto;
+  height: auto;
+  max-width: 180px;
+  max-height: 120px
 }
 .item__title {
   font-weight: 300;
@@ -810,7 +824,7 @@ main .container {
   -webkit-box-direction: reverse;
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
-  margin-top: 20px
+  margin-top: 10px
 }
 .item__price {
   font-weight: 700
@@ -987,28 +1001,29 @@ main .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   height: 100vh;
-  width: 100vw
+  width: 100vw;
+  overflow-y: scroll
 }
 .cart__content {
   position: relative;
   width: 100%;
   max-width: 700px;
-  min-height: 50px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 5px;
   background-color: #fff;
   padding: 20px;
   -webkit-animation: fadeIn .5s ease;
   animation: fadeIn .5s ease;
+  margin-top: 20px;
   z-index: 10
 }
-.cart__content i {
+.cart__content i[data-close=cart] {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -1017,10 +1032,10 @@ main .container {
   -o-transition: opacity .25s ease;
   transition: opacity .25s ease
 }
-.cart__content i:hover {
+.cart__content i[data-close=cart]:hover {
   opacity: .7
 }
-.cart__item-wrapper {
+.cart__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1034,7 +1049,7 @@ main .container {
   -o-transition: border-color .25s ease;
   transition: border-color .25s ease
 }
-.cart__item-wrapper:hover {
+.cart__item:hover {
   border-color: #dedede
 }
 .cart__item-img {
@@ -1047,7 +1062,11 @@ main .container {
 .cart__item-title {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
-  flex: 1 1 auto
+  flex: 1 1 auto;
+  margin-left: 20px
+}
+.cart__removeBtn {
+  margin-left: 20px
 }
 .cart__total-price {
   display: block;
@@ -1062,25 +1081,44 @@ main .container {
   margin: 0 5px;
   padding: 0 5px;
   font-weight: 700;
-  border: 1px solid #dedede
+  font-size: 18px
 }
 .cart__btn {
   border: none;
   outline: 0;
-  border-radius: 50%;
   width: 20px;
   height: 20px;
   line-height: 20px;
   text-align: center;
-  background-color: #4ca1ff;
-  color: #fff;
+  color: #333;
+  background: 0 0;
   -webkit-transition: background-color .25s ease;
   -o-transition: background-color .25s ease;
   transition: background-color .25s ease
 }
-.cart__btn:focus,
 .cart__btn:hover {
   background-color: #7fbcff
+}
+.cart__btn:disabled {
+  background-color: transparent;
+  color: #333
+}
+.cart__removeBtn {
+  background-color: transparent;
+  border: none;
+  outline: 0
+}
+.cart__removeBtn i {
+  color: #4ca1ff;
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease
+}
+.cart__removeBtn:hover i {
+  color: #7fbcff;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2)
 }
 .cart__counter-wrapper {
   -webkit-box-flex: 0;
@@ -1117,8 +1155,11 @@ main .container {
   position: relative
 }
 .my-slides__img {
-  width: 100%;
-  height: auto
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 200px;
+  margin: 0 auto
 }
 .next,
 .prev {
